@@ -87,7 +87,9 @@ app.get("/", (req, res) => {
 // DELETE 요청
 app.delete("/", (req, res) => {
   // 4️⃣. 세션 내 정보를 삭제하는 메소드를 작성하세요.
+  req.session.destroy();
   // 5️⃣. 쿠키를 삭제하는 메소드를 작성하세요.
+  res.clearCookie("session_id");
   res.send("🧹세션 삭제 완료");
 });
 
